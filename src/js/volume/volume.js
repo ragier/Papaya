@@ -401,8 +401,6 @@ papaya.volume.Volume.prototype.finishedReadData = function (vol) {
         papaya.utilities.ObjectUtils.bind(this, this.finishedReadHeaderData));
 };
 
-
-
 papaya.volume.Volume.prototype.finishedReadHeaderData = function () {
     this.rawData = null;
 
@@ -413,7 +411,7 @@ papaya.volume.Volume.prototype.finishedReadHeaderData = function () {
         return;
     }
 
-    this.header.imageType.swapped = (this.header.imageType.littleEndian !== papaya.utilities.PlatformUtils.isPlatformLittleEndian());
+    this.header.imageType.swapped = (this.header.imageType.littleEndian !== true);
 
     var name = this.header.getName();
 
